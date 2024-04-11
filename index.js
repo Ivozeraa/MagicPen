@@ -13,7 +13,7 @@ window.onload = function(){
         ctx.strokeStyle = colorPicker.value;
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
-        ctx.lineWidth = 5; // Defina a largura da linha conforme necessário
+        ctx.lineWidth = 3; // Defina a largura da linha 
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(
