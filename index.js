@@ -34,6 +34,20 @@ window.onload = function(){
     canvas.addEventListener('mouseout', () => {
         isDrawing = false;
     });
+    canvas.addEventListener('touchstart', (e) => {
+        isDrawing = true;
+        lastX = e.touches[0].pageX - canvas.offsetLeft;
+        lastY = e.touches[0].pageY - canvas.offsetTop;
+    });
+
+    canvas.addEventListener('touchmove', (e) => {
+        draw(e.touches[0]);
+        e.preventDefault(); // Evitar o scroll enquanto desenha
+    });
+
+    canvas.addEventListener('touchend', () => {
+        isDrawing = false;
+    });
 
     clearBttn.addEventListener('click', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
