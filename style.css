@@ -1,0 +1,14 @@
+.sketch{
+    display: grid;
+    place-items: center;
+    margin-top: 5rem;
+}
+
+canvas{
+    border: 1px solid black;
+    background: #0000001C;
+}
+.control{
+    margin: .5rem auto;
+    width: fit-content;
+}
