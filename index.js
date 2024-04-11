@@ -8,44 +8,49 @@ window.onload = function(){
     let lastX = 0;
     let lastY = 0;
 
-    function drawTouch(e) {
+    function draw(e) {
         if (!isDrawing) return;
         ctx.strokeStyle = colorPicker.value;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.lineWidth = 5; // Defina a largura da linha conforme necessário
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
+        ctx.lineTo(
+            e.clientX - canvas.getBoundingClientRect().left,
+            e.clientY - canvas.getBoundingClientRect().top
+        );
         ctx.stroke();
-        lastX = e.touches[0].clientX - canvas.offsetLeft;
-        lastY = e.touches[0].clientY - canvas.offsetTop;
+        lastX = e.clientX - canvas.getBoundingClientRect().left;
+        lastY = e.clientY - canvas.getBoundingClientRect().top;
     }
 
-    canvas.addEventListener('mousedown', (e) => {
+    function startDrawing(e) {
         isDrawing = true;
-        lastX = e.offsetX;
-        lastY = e.offsetY;
-    });
+        lastX = e.clientX - canvas.getBoundingClientRect().left;
+        lastY = e.clientY - canvas.getBoundingClientRect().top;
+    }
 
+    function stopDrawing() {
+        isDrawing = false;
+    }
+
+    canvas.addEventListener('mousedown', startDrawing);
     canvas.addEventListener('mousemove', draw);
-
-    canvas.addEventListener('mouseup', () => {
-        isDrawing = false;
-    });
-
-    canvas.addEventListener('mouseout', () => {
-        isDrawing = false;
-    });
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
 
     canvas.addEventListener('touchstart', (e) => {
-        isDrawing = true;
-        lastX = e.touches[0].clientX - canvas.offsetLeft;
-        lastY = e.touches[0].clientY - canvas.offsetTop;
+        e.preventDefault(); // Impede o comportamento padrão do toque (scroll, zoom, etc.)
+        startDrawing(e.touches[0]);
     });
 
-    canvas.addEventListener('touchmove', drawTouch);
-
-    canvas.addEventListener('touchend', () => {
-        isDrawing = false;
+    canvas.addEventListener('touchmove', (e) => {
+        e.preventDefault(); // Impede o comportamento padrão do toque (scroll, zoom, etc.)
+        draw(e.touches[0]);
     });
+
+    canvas.addEventListener('touchend', stopDrawing);
 
     clearBttn.addEventListener('click', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
