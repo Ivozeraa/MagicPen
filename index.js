@@ -11,9 +11,9 @@ window.onload = function(){
     function draw(e) {
         if (!isDrawing) return;
         ctx.strokeStyle = colorPicker.value;
-        ctx.lineJoin = 'round';
-        ctx.lineCap = 'round';
-        ctx.lineWidth = 3; // Defina a largura da linha 
+        ctx.lineJoin = 'round'; //Junção
+        ctx.lineCap = 'round'; //Ponta
+        ctx.lineWidth = 3; // Largura 
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(
@@ -41,12 +41,12 @@ window.onload = function(){
     canvas.addEventListener('mouseout', stopDrawing);
 
     canvas.addEventListener('touchstart', (e) => {
-        e.preventDefault(); // Impede o comportamento padrão do toque (scroll, zoom, etc.)
+        e.preventDefault();
         startDrawing(e.touches[0]);
     });
 
     canvas.addEventListener('touchmove', (e) => {
-        e.preventDefault(); // Impede o comportamento padrão do toque (scroll, zoom, etc.)
+        e.preventDefault(); 
         draw(e.touches[0]);
     });
 
