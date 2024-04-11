@@ -8,15 +8,15 @@ window.onload = function(){
     let lastX = 0;
     let lastY = 0;
 
-    function draw(e){
-        if(!isDrawing) return;
+    function drawTouch(e) {
+        if (!isDrawing) return;
         ctx.strokeStyle = colorPicker.value;
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
         ctx.stroke();
-        lastX = e.offsetX;
-        lastY = e.offsetY;
+        lastX = e.touches[0].clientX - canvas.offsetLeft;
+        lastY = e.touches[0].clientY - canvas.offsetTop;
     }
 
     canvas.addEventListener('mousedown', (e) => {
@@ -34,16 +34,14 @@ window.onload = function(){
     canvas.addEventListener('mouseout', () => {
         isDrawing = false;
     });
+
     canvas.addEventListener('touchstart', (e) => {
         isDrawing = true;
-        lastX = e.touches[0].pageX - canvas.offsetLeft;
-        lastY = e.touches[0].pageY - canvas.offsetTop;
+        lastX = e.touches[0].clientX - canvas.offsetLeft;
+        lastY = e.touches[0].clientY - canvas.offsetTop;
     });
 
-    canvas.addEventListener('touchmove', (e) => {
-        draw(e.touches[0]);
-        e.preventDefault(); // Evitar o scroll enquanto desenha
-    });
+    canvas.addEventListener('touchmove', drawTouch);
 
     canvas.addEventListener('touchend', () => {
         isDrawing = false;
