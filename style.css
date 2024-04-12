@@ -24,3 +24,13 @@ canvas{
     margin: .5rem auto;
     width: fit-content;
 }
+
+#clearBttn{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#canvas{
+    
+}
