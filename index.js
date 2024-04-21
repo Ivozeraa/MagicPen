@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const colorPicker = document.getElementById('colorPicker');
@@ -11,24 +11,21 @@ window.onload = function(){
     function draw(e) {
         if (!isDrawing) return;
         ctx.strokeStyle = colorPicker.value;
-        ctx.lineJoin = 'round'; //Junção
-        ctx.lineCap = 'round'; //Ponta
+        ctx.lineJoin = 'round'; // Junção
+        ctx.lineCap = 'round'; // Ponta
         ctx.lineWidth = 3; // Largura 
+        const [currentX, currentY] = getMousePosition(canvas, e);
         ctx.beginPath();
         ctx.moveTo(lastX, lastY);
-        ctx.lineTo(
-            e.clientX - canvas.getBoundingClientRect().left,
-            e.clientY - canvas.getBoundingClientRect().top
-        );
+        ctx.lineTo(currentX, currentY);
         ctx.stroke();
-        lastX = e.clientX - canvas.getBoundingClientRect().left;
-        lastY = e.clientY - canvas.getBoundingClientRect().top;
+        lastX = currentX;
+        lastY = currentY;
     }
 
     function startDrawing(e) {
         isDrawing = true;
-        lastX = e.clientX - canvas.getBoundingClientRect().left;
-        lastY = e.clientY - canvas.getBoundingClientRect().top;
+        [lastX, lastY] = getMousePosition(canvas, e);
     }
 
     function stopDrawing() {
@@ -55,4 +52,25 @@ window.onload = function(){
     clearBttn.addEventListener('click', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
+
+    function getMousePosition(canvas, event) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        return [
+            (event.clientX - rect.left) * scaleX,
+            (event.clientY - rect.top) * scaleY
+        ];
+    }
+
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+
+    
+    window.addEventListener('resize', resizeCanvas);
+
+    
+    resizeCanvas();
 };
