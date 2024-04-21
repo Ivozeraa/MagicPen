@@ -64,13 +64,14 @@ window.onload = function() {
     }
 
     function resizeCanvas() {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
+        const parentWidth = canvas.parentNode.offsetWidth;
+        canvas.width = parentWidth;
+        canvas.height = parentWidth * 0.6; // Manter uma proporção de 3:2
     }
 
-    
+    // Redimensiona o canvas quando a janela é redimensionada
     window.addEventListener('resize', resizeCanvas);
 
-    
+    // Redimensiona o canvas no carregamento da página
     resizeCanvas();
 };
