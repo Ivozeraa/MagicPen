@@ -2,7 +2,37 @@ body {
     background: linear-gradient(to bottom, rgb(88, 22, 175), rgb(0, 0, 0));
     margin: 0; 
     height: 100vh; 
-    overflow: auto; 
+    overflow: auto;
+    padding: 0;
+}
+.byTech{
+    font: 25pt Arial normal;
+}
+.navbar{
+    background-color: white;
+    width: 100%;
+    height: 10vh;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(120, 50, 250);
+    text-decoration: none;
+}
+  
+nav ul li a:hover {
+    background-color: #682bb8;
+  }
+.container-navbar{
+    display: flex;
 }
 .t1 {
     display: flex;
