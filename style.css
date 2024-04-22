@@ -5,35 +5,57 @@ body {
     overflow: auto;
     padding: 0;
 }
-.byTech{
-    font: 25pt Arial normal;
-}
-.navbar{
-    background-color: white;
+.navbar {
+    background: rgb(255, 255, 255);
     width: 100%;
-    height: 10vh;
-}
-nav ul {
+    height: 60px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 2px 3px;
+    transition: top 0.3s ease; 
+  }
+  .logo-infor{
+    width: 50px;
+    filter: saturate(0px);
+  }
+  
+  .navbar-menu {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-}
-nav ul li a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: rgb(120, 50, 250);
-    text-decoration: none;
-}
-  
-nav ul li a:hover {
-    background-color: #682bb8;
-  }
-.container-navbar{
+    align-items: center;
     display: flex;
-}
+  }
+  
+  .navbar-menu li {
+    margin-right: 20px;
+  }
+  
+  .navbar-menu li a {
+    color: #8400ff;
+    text-decoration: none;
+  }
+  
+  .navbar-menu li a:hover {
+    color: #a14fff;
+    text-decoration: underline rgb(255, 255, 255) 1px;
+    font-weight: bold;
+    border-bottom: 5px #d3e6c7;
+  }
+  
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
+  
 .t1 {
     display: flex;
     margin: auto;
