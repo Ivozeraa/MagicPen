@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom, rgb(88, 22, 175), rgb(0, 0, 0)); /* Aplicando gradiente diretamente ao corpo */
+    background: linear-gradient(to bottom, rgb(88, 22, 175), rgb(0, 0, 0));
     margin: 0; 
     height: 100vh; 
     overflow: auto; 
@@ -39,7 +39,7 @@ canvas {
     canvas {
         display: flex;
         margin: auto;
-        width: 90%; /* Defina o tamanho desejado para dispositivos menores */
-        height: 40vh; /* Defina a altura desejada para dispositivos menores */
+        width: 90%; 
+        height: 40vh; 
     }
 }
