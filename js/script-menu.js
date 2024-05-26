@@ -1,5 +1,8 @@
-    // Adicione um evento de clique ao botão do menu de hambúrguer
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('.nav-ul').classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('.nav-ul');
+
+    menuToggle.addEventListener('click', function() {
+        navUl.classList.toggle('active');
     });
-    
+});
