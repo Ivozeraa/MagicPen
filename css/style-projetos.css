@@ -1,5 +1,4 @@
 body {
-    background-size: cover;
     background: linear-gradient(to left, rgb(144, 0, 255),rgb(42, 2, 110),rgb(92, 0, 84));
     margin: 0; 
     height: 100vh; 
@@ -89,35 +88,39 @@ body {
 
 
 }
-article{
 
+
+article{
     font-size: 20px;
     p{
-        font-size: 23px;    }
-    margin: 20px;
-    color: rgb(255, 255, 255);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 23px;
+        margin-bottom: 125px;   
+    }
+        margin: 20px;
+        color: rgb(255, 255, 255);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.membros{
+.projs{
+    font-size: 25px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
     img{
-        width: 30%;
-        height: 30%;
-        margin-top: 100px ;
-        border: solid 10px rgb(255, 255, 255);
+        width: 8%;
+        height: 8%;
+        border-radius: 10px;
+    }
+    a{
+        margin-left: 10px;
+        color: rgb(255, 255, 255);
+
     }
 }
 
 
-
-
 .footer {
-    margin-top: 200px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(0, 0, 0);
     background: linear-gradient(to top, rgb(255, 255, 255),  rgb(233, 199, 255));
