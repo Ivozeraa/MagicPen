@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
+
 :root {
     --cor-do-header: #9109b3;
     --cor-do-fundo: #fdffff;
@@ -11,16 +12,17 @@
     --cor-do-menu-1: #122d85;
     --cor-do-menu-2: #303030cc;
     --cor-da-fonte-menu: #ffffff;
-    --cor-do-footer: #010141;
+    --cor-do-footer: #b9b9b9;
 }
 
 body {
     background-size: cover;
     background: var(--cor-do-fundo);
     margin: 0;
-    height: 100vh;
-    overflow: auto;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .title1 {
@@ -114,46 +116,48 @@ body {
     }
 }
 
-.projs{
+.projs {
     font-size: 25px;
     display: flex;
     align-items: center;
+    margin: 10px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-    img{
-        width: 8%;
-        height: 8%;
-        border-radius: 10px;
-    }
-    a{
-        margin-left: 10px;
-        color: rgb(255, 255, 255);
-
-    }
 }
 
+.projs img {
+    width: 8%;
+    height: 8%;
+    border-radius: 10px;
+}
 
-article{
+.projs a {
+    margin-left: 10px;
+    color: var(--cor-do-header);
+}
+
+article {
     font-size: 20px;
-
-    h1{
-        margin-bottom: 100px;
-        font-size: 40px;
-    }
-
-    p{
-        font-size: 23px;    }
     margin: 20px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
+}
+
+article h1 {
+    margin-bottom: 40px;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
+article p {
+    font-size: 23px;
+    margin-bottom: 20px;
 }
 
 .footer {
-    margin-top: 50px;
+    margin-top: auto;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(0, 0, 0);
-    background: linear-gradient(to top, rgb(255, 255, 255), rgb(233, 199, 255));
+    background: var(--cor-do-footer);
     padding: 10px;
     text-align: center;
 }
@@ -168,7 +172,7 @@ article{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0;
 }
 
 .socials li {
@@ -177,7 +181,7 @@ article{
 
 .socials a {
     text-decoration: none;
-    color: rgb(156, 52, 216);
+    color: var(--cor-do-header);
 }
 
 .socials a i {
