@@ -141,7 +141,7 @@ body {
     background: var(--cor-do-header);
     color: #ffffff;
     border-radius: 0 50px 50px 0;
-    width: auto;
+    width: 90%;
     height: 4rem;
     padding: 1rem 2rem;
     margin: 0;
@@ -237,4 +237,34 @@ body {
 
 .socials a:hover i {
     color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 768px) {
+    .membros header {
+        border-radius: 0 50px 50px 0;
+        padding: 0.5rem 1rem;
+        height: auto;
+        width: 90%;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .membros .equipe-byte {
+        padding-left: 1rem;
+    }
+    .membros .equipe-byte .card {
+        width: 10rem;
+        height: 14rem;
+        margin: auto;
+    }
+    .membros .equipe-byte .card figure {
+        width: 6rem;
+        height: 6rem;
+        border: 2px solid #d91dff;
+    }
+    .membros .equipe-byte .card span h3 {
+        font-size: 0.9rem;
+    }
+    .membros .equipe-byte .card span h4 {
+        font-size: 0.8rem;
+    }
 }
