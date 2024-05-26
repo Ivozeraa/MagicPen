@@ -133,6 +133,7 @@ body {
 .projs a {
     margin-left: 10px;
     color: var(--cor-do-header);
+    text-decoration: none;
 }
 
 article {
