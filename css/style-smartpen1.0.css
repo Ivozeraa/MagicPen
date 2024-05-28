@@ -160,8 +160,14 @@ canvas:hover{
 }
 
 .control {
-    margin: .5rem auto;
+    margin: 20px auto;
     width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid var(--cor-do-header);
+    border-radius: 10px;
 }
 
 #colorPicker{

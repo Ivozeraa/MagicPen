@@ -6,60 +6,55 @@
     <title>Byte | SmartPen (1.0)</title>
     <link rel="stylesheet" href="css/style-smartpen1.0.css">
     <link rel="shortcut icon" href="imgs/logo.jpg" type="image/x-icon">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
-
 <body>
-    
-    <div class="navbar">
-        <div class="menu-toggle">
-          <div class="menu-bar"></div>
-          <div class="menu-bar"></div>
-          <div class="menu-bar"></div>
-        </div>
-        <h1 class="title1">Byte</h1>
-        <img src="imgs/logofc.png" alt="" height="75px" class="logofc">
-        <ul class="nav-ul">
-              <li class="nav-li"><a href="index.html" class="nav-a">Inicio</a></li>
-              <li class="nav-li"><a href="sobre.html" class="nav-a">Sobre</a></li>
-              <li class="nav-li"><a href="projetos.html" class="nav-a">Projetos</a></li>
-              <li class="nav-li"><a href="contatos.html" class="nav-a">Contatos</a></li>
-          </ul>
+ 
+  <div class="navbar">
+      <div class="menu-toggle">
+        <div class="menu-bar"></div>
+        <div class="menu-bar"></div>
+        <div class="menu-bar"></div>
       </div>
-   
-
+      <img src="imgs/logofc.png" alt="" height="75px" class="logofc">
+      <h1 class="title1">Byte</h1>
+      <ul class="nav-ul">
+            <li class="nav-li"><a href="index.html" class="nav-a">Inicio</a></li>
+            <li class="nav-li"><a href="sobre.html" class="nav-a">Sobre</a></li>
+            <li class="nav-li"><a href="projetos.html" class="nav-a">Projetos</a></li>
+            <li class="nav-li"><a href="contatos.html" class="nav-a">Contatos</a></li>
+        </ul>
+    </div>
+ 
 
     <div class="sketch">
         <h1 class="t1">SmartPen</h1>
-        <div >
+        <div>
             <div>
                 <canvas id="canvas"></canvas>
             </div>
             <div class="control">
-                <input type="color" id="colorPicker" class="colorPicker">
-                <button id="clearBttn"><img src="imgs/lixo.png" alt="" height="30px"></button>
+              
+              <button id="eraserBtn"><img src="imgs/lapis e borracha.png" height="30px"></button>
+              <input type="range" id="lineWidthRange" min="1" max="20" value="4" step="1"> 
+              <br>    
+              <input type="color" id="colorPicker" class="colorPicker">          
+              <button id="fillBtn"><img src="imgs/images.png" height="30px"></button>
+              <button id="clearBttn"><img src="imgs/lixo.png" alt="" height="30px"></button>
             </div>
         </div>
     </div>
     
     <footer class="footer">
         <h3>"Vire Bixo", José Walter</h3>
-            <ul class="socials">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-github"></i></a>
-              </li>
-            </ul>
-            <h3>&copy; Byte Company Ltda - Todos os direitos reservados.</h1>
-      </footer>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-github"></i></a></li>
+        </ul>
+        <h3>&copy; Byte Company Ltda - Todos os direitos reservados.</h1>
+    </footer>
+
     <script src="js/script-smartpen1.0.js"></script>
-    
 </body>
 </html>
