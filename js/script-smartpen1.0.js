@@ -16,6 +16,7 @@ window.onload = function() {
     function draw(e) {
         if (!isDrawing) return;
         ctx.lineWidth = lineWidth;
+        ctx.lineCap = 'round'; // Define a ponta da linha como redonda
         if (!isErasing) {
             ctx.strokeStyle = colorPicker.value;
             ctx.globalCompositeOperation = 'source-over';
