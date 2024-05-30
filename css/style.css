@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+  }
 
 :root {
     --cor-do-header: #9109b3;
